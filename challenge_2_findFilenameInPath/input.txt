@@ -1,0 +1,6 @@
+~/Documents/workspace/P407/vulcan/dashboard
+/home/hacene/Documents/workspace/P407/vulcan/
+~/Documents/workspace/P407/vulcan/dashboard/CMakeList.txt
+/home/hacene/Documents/workspace/P407/vulcan/dashboard/inc/setting.hpp
+~/Documents/workspace/P407/vulcan/dashboard/qml.qrc
+main.cpp

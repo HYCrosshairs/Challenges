@@ -7,7 +7,7 @@
 #define GREEN "\x1B[32m"
 #define BLUE "\x1B[34m"
 
-void list_file_dir(const char *path)
+void list_file_dir(char *path)
 {
     DIR *directory;
     struct dirent *dir;
@@ -35,4 +35,42 @@ void list_file_dir(const char *path)
         }
     }
     closedir(directory);
+}
+
+unsigned int str_len(char *str)
+{
+    unsigned int len = 0;
+
+    while (*str != '\0')
+    {
+        len++;
+        str++;
+    }
+    return len;
+}
+
+char* extract_filename_from_path(char* path)
+{
+    char* dcrPtr;
+    unsigned int len = str_len(path);
+
+    dcrPtr = path + len;
+
+    while (*dcrPtr != '/')
+    {
+        dcrPtr--;
+
+        if (dcrPtr == path)
+        {
+            return path;
+        }
+    }
+    dcrPtr++;
+
+    if (*dcrPtr == '\0')
+    {
+        return "[No Filename]";
+    }
+    
+    return dcrPtr;
 }
